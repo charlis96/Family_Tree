@@ -9,5 +9,10 @@ namespace Library
             this.Name = name;
             this.Age = age;
         }
+
+        public void Accept(Visitor visitor)
+        {
+            visitor.Visit(this);
+        }
     }
 }
