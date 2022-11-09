@@ -1,6 +1,6 @@
 namespace Library
 {
-    public class AgeCalculatorVisitor : Visitor
+    public class LongestNameVisitor : Visitor
     {
         public override void Visit(Node node)
         {
@@ -14,7 +14,11 @@ namespace Library
 
         public override void Visit(Person person)
         {
-            this.Sum += person.Age;
+            if (person.Age > this.OldestAge)
+            {
+                this.OldestAge = person.Age;
+                this.OldestPersonName = person.Name;
+            }
         }
     }
 }
