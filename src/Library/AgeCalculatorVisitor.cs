@@ -2,6 +2,8 @@ namespace Library
 {
     public class AgeCalculatorVisitor : Visitor
     {
+        public int Sum { get; protected set; } = 0;
+
         public override void Visit(Node node)
         {
             node.Person.Accept(this);
@@ -9,7 +11,6 @@ namespace Library
             {
                 children.Accept(this);
             }
-
         }
 
         public override void Visit(Person person)
